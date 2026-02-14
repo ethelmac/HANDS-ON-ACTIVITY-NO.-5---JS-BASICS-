@@ -10,30 +10,29 @@ function insertNumber() {
     const val = parseFloat(input.value);
 
     if (!isNaN(val)) {
-        arr.push(val); // Add the new number to our list
-        input.value = ""; // Clear the input box
-        input.focus();    // Put the cursor back in the box for the next number
+        arr.push(val); 
+        input.value = ""; 
+        input.focus();    
         updateUI();
     }
 }
 
 function updateUI() {
-    // 1. Display the list
+   
     elementTxt.innerHTML = arr.join("<br>");
 
     if (arr.length > 0) {
-        // 2. Calculate Sum
+        
         let sum = 0;
         for (let i = 0; i < arr.length; i++) {
             sum += arr[i];
         }
 
-        // 3. Find Highest and Lowest using Math methods
-        // The ...arr is the "spread operator" which expands the array into individual numbers
+        
         let highest = Math.max(...arr);
         let lowest = Math.min(...arr);
 
-        // 4. Update the screen
+        
         sumTxt.innerHTML = sum;
         highTxt.innerHTML = highest;
         lowTxt.innerHTML = lowest;
@@ -41,9 +40,10 @@ function updateUI() {
 }
 
 function deleteAll() {
-    arr = []; // Empty the array
+    arr = []; 
     elementTxt.innerHTML = "";
     sumTxt.innerHTML = "";
     highTxt.innerHTML = "";
     lowTxt.innerHTML = "";
+
 }
